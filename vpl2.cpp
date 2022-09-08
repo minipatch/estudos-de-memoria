@@ -53,13 +53,14 @@ class Orcamento {
   private:
     // Preencher
     
-    // ************* Dados *************
-    double saude;
-    double educacao;
-    double seguranca;
-    double previdencia;
-    double AdmPublica;    
+    // ************* Dados ************    
+    Categoria *saude;
+    Categoria *educacao;
+    Categoria *seguranca;
+    Categoria *previdencia;
+    Categoria *admPublica;
 
+    
     // *********************************
     
     // ************* Operações *************
@@ -69,26 +70,58 @@ class Orcamento {
     // Este valor deve ser distribuído a cada categoria, nos percentuais descritos anteriormente.
     public:
     Orcamento(double impostos) {
-      this->saude=impostos;
-      this->educacao=impostos;
-      this->seguranca=impostos;
-      this->previdencia=impostos;
-      this->AdmPublica=impostos;
+      saude = new Categoria(0,impostos*0.15);
+      educacao = new Categoria(1,impostos*0.15);
+      seguranca=  new Categoria(2,impostos*0.20);
+      previdencia = new Categoria(3,impostos*0.35);
+      admPublica = new Categoria(4,impostos*0.15);
     }
     
     // Reduz o valor no caixa da categoria especificada.
     void gastoCategoria(int codigo_categoria, double valor) {
-      for(int i=1;i>codigo_categoria;i++){
-        if(codigo_categoria==i){
+      for(int i=0;i>4;i++){
+        if(codigo_categoria==0){
+          saude->gastaCaixa(valor);
+        }
+        if(codigo_categoria==1){
+          educacao->gastaCaixa(valor);
+
           
+        }
+        if(codigo_categoria==2){
+          seguranca->gastaCaixa(valor);
+
+        }
+        if(codigo_categoria==3){
+          previdencia->gastaCaixa(valor);
+        
+        }
+        if(codigo_categoria==4){
+          admPublica->gastaCaixa(valor);
+
         }
       }
     }
     
     // Retorna o valor em caixa da categoria especificada.
     double getSaldo(int codigo_categoria) {
-      for(int i=1;i>codigo_categoria;i++){
-        if(codigo_categoria==i){
+      for(int i=0;i>4;i++){
+        if(codigo_categoria==0){
+          saude->getValorCaixa();
+        }
+        if(codigo_categoria==1){
+          educacao->getValorCaixa();
+        }
+        if(codigo_categoria==2){
+          seguranca->getValorCaixa();
+
+        }
+        if(codigo_categoria==3){
+          previdencia->getValorCaixa();
+
+        }
+        if(codigo_categoria==4){
+          admPublica->getValorCaixa();
           
         }
       }
