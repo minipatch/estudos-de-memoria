@@ -35,12 +35,12 @@ class Categoria{
     
     // Adiciona uma quantia ao caixa de uma categoria.
     void adicionaCaixa(double valor) {
-      caixa+=valor;
+      caixa=caixa+valor;
     }
     
     // Remove uma quantia ao caixa de uma categoria.
     void gastaCaixa(double valor) {
-      caixa-=valor;
+      caixa=caixa-valor;
 
     }
     // *********************************
@@ -76,6 +76,10 @@ class Orcamento {
       previdencia = new Categoria(3,impostos*0.35);
       admPublica = new Categoria(4,impostos*0.15);
     }
+
+
+    
+    
     
     // Reduz o valor no caixa da categoria especificada.
     void gastoCategoria(int codigo_categoria, double valor) {
