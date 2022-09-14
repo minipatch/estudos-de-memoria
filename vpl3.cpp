@@ -62,7 +62,9 @@ class colecao{
 
         void imprimir(){
         //preciso de help
-        //std::cout<<lista<<std::endl;                
+        for(auto it:status){
+            std::cout<<it.lista<<std::endl;    
+        }                
             
         }
 
@@ -94,6 +96,14 @@ int main(){
     }
 
     if(letra==p){
-        
+        Fatura.imprimir();
+    }
+
+    if(letra==s){
+        Fatura.status();
+    }
+
+    if(letra==e){
+        return 0;
     }
 }
