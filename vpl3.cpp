@@ -2,108 +2,115 @@
 #include <string>
 #include <map>
 #include <vector>
-#include <ostream>
 
-class fatura{
+
+class Fatura {
     private:
-    
-        std::string codigo;
-        char tpFatura;
-        double valor;
+        std::string _codigo;
+        char _tipo;
+        double _valor;
     
     public:
-        fatura(){
+        Fatura(std::string codigo, char tipo, double valor) : _codigo(codigo), _tipo(tipo), _valor(valor) {}
 
-        }
-        fatura(std::string _codigo,char _tpFatura, double _valor){
-            this->codigo=_codigo;
-            this->tpFatura=_tpFatura;
-            this->valor=_valor;
+        void imprimir() {
+            std::cout << _tipo << " " << _valor << " " << _codigo << std::endl;
         }
 
-        void imprimir(){
-            std::cout<<tpFatura <<valor <<codigo<<std::endl;
+        double getValor() {
+            return _valor;
         }
 
-        double getValor(){
-            return valor;
-        }
-
-        char getTpFatura(){
-            return tpFatura; 
+        char getTipo() {
+            return _tipo; 
         }
 };
 
+class Colecao{
+    private:
+        std::vector<Fatura*> _faturas;
+        std::map<char, int> _tipos;
 
-class colecao{
-    private:    
-        std::map<char,int> status;
-        std::vector<fatura> lista;
-    
     public:
-        colecao(){
-            
-        }
+    Colecao() {
+        _tipos['p'] = 0;
+        _tipos['b'] = 0;
+        _tipos['g'] = 0;
+    }
 
-        void adicionar(fatura f){
-            lista.push_back(f);
-            for(int i=0;i<lista.size();i++){
-                status[i];
+    void adcionar(Fatura& fatura) {
+        if(_faturas.empty() || fatura.getValor() > _faturas.back()->getValor()) {
+            _faturas.push_back(&fatura);
+        } else {
+            for(std::vector<Fatura*>::iterator itr = _faturas.begin(); itr < _faturas.end(); itr++){
+                if(fatura.getValor() < (*itr)->getValor()){
+                    _faturas.insert(itr, &fatura);
+                    break;
+                }
             }
         }
+        _tipos[fatura.getTipo()]++;
+    }
 
-        void proxima(){
-            lista.pop_back();
-            imprimir();
-            for(int i=lista.size();0<i;i--){
-                status[i];
-            }
+    void proxima() {
+        if(!(_faturas.empty())) {
+            _faturas.back()->imprimir();
+            _tipos[_faturas.back()->getTipo()]--;
+            delete (_faturas.back());
+            _faturas.pop_back();
         }
-
-        void imprimir(){
-        //preciso de help
-        for(auto it:status){
-            std::cout<<it.lista<<std::endl;    
-        }                
-            
+    }
+    
+    void imprimir() {
+        for(Fatura* fatura : _faturas) {
+            fatura->imprimir();
         }
+    }
 
-        void status(){
-            for(auto it:status){
-                std::cout<<it.first<<std::endl<<it.second<<std::endl;
-            }
+
+    void status() {
+        for(auto it : _tipos){
+            std::cout << it.first << " " << it.second << std::endl;
         }
-
-
-
+    }
 };
 
 
-int main(){
-    const char f='f',r='r',p='p',s='s',e='e';
-    char letra;
-    std::cin>>letra;
+int main() {
+    Colecao colecao;
+    Fatura* fatura;
+
+    char comando = 'p';
+    char tipo = 'p';
+    double valor = 0;
+    std::string codigo = "00000";
     
-    if(letra==f){
-        std::string cod;
-        char tpFatura;
-        double valor; 
-        std::cin>>cod>>tpFatura>>valor;
-        fatura Fatura(cod,tpFatura,valor);
-    }
-    if(letra==r){
-        Fatura.proxima();
-    }
+    while(comando != 'e') {
 
-    if(letra==p){
-        Fatura.imprimir();
-    }
+        std::cin >> comando;
+        if (comando == 'f') 
+            std::cin >> tipo >> valor >> codigo;
 
-    if(letra==s){
-        Fatura.status();
+        switch(comando) {
+            case 'f': {
+                fatura = new Fatura(codigo, tipo, valor); 
+                colecao.adcionar(*fatura);
+                break;
+            }
+            case 'r' : {
+                colecao.proxima();
+                break;
+            }
+            case 'p' : {
+                colecao.imprimir();
+                break;
+            }
+            case 's' : {
+                colecao.status();
+                break;
+            }
+        }
     }
-
-    if(letra==e){
-        return 0;
-    }
+    return 0; 
 }
+
