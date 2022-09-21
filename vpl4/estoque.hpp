@@ -12,6 +12,9 @@ class Estoque {
     private:
         std::vector<Geladeira> geladeiras;
         std::vector<Fogao> fogoes;
+        int indice_geladeira;
+        int indice_fogao;
+        
 
     public:
 

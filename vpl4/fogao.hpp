@@ -5,10 +5,16 @@
 
 class Fogao {
     private:
-    // Adicione suas variaveis globais aqui
-
+    
+    int numero_de_queimadores;
+    int capacidade_forno;
+    
     public:
-    // Adicione a assinatura dos seus metodos / construtores aqui
+    
+    Fogao();
+
+    int getNumero_de_queimadores();
+    int getCapacidade_forno();
 };
 
 #endif

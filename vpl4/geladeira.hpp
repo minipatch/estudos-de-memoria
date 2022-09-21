@@ -6,10 +6,15 @@
 class Geladeira {
     private:
     // Adicione suas variaveis globais aqui
+    int capacidade_em_litros;
+    int numeros_de_portas;
 
     public:
     // Adicione a assinatura dos seus metodos / construtores aqui
+    Geladeira();
 
+    int getCapacidade_em_litros();
+    int getNumeros_de_portas();
 };
 
 #endif
