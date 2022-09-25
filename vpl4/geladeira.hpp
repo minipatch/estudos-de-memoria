@@ -15,6 +15,8 @@ class Geladeira {
 
     int getCapacidade_em_litros();
     int getNumeros_de_portas();
+    void setCapacidade_em_litros(int ncapacidade);
+    void setNumero_de_portas(int nportas);
 };
 
 #endif

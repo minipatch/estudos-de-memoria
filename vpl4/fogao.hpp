@@ -15,6 +15,9 @@ class Fogao {
 
     int getNumero_de_queimadores();
     int getCapacidade_forno();
+
+    void setNumero_dequeimadores(int nqueimadores);
+    void setCapacidade_forno(int ncapacidade_forno);
 };
 
 #endif
