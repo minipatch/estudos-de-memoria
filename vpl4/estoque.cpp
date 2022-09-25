@@ -56,17 +56,10 @@ void Estoque::exibe_fogoes(){
 }
 
 int Estoque::quantidade_geladeiras(){
-    int ngeladeiras;
-    for(int i=0;i<=geladeiras.size();i++){
-        ngeladeiras=i;
-    }
-    return ngeladeiras;
+    return geladeiras.size();
 }
 
 int Estoque::quantidade_fogoes(){
-    int nfogoes;
-    for(int i=0;i<=fogoes.size();i++){
-        i=nfogoes;
-    }
-    return nfogoes;
+    
+    return fogoes.size();
 }
