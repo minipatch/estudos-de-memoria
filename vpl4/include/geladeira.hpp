@@ -11,7 +11,7 @@ class Geladeira {
 
     public:
     // Adicione a assinatura dos seus metodos / construtores aqui
-    Geladeira();
+    Geladeira(int capacidade_em_litros, int numeros_de_portas);
 
     int getCapacidade_em_litros();
     int getNumeros_de_portas();

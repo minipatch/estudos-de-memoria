@@ -1,9 +1,7 @@
 #include "geladeira.hpp"
 
-Geladeira::Geladeira(){
-    capacidade_em_litros=0;
-    numeros_de_portas=0;
-}
+Geladeira::Geladeira(int capacidade_em_litros, int numeros_de_portas) 
+: capacidade_em_litros(capacidade_em_litros), numeros_de_portas(numeros_de_portas) {}
 
 int Geladeira::getCapacidade_em_litros(){
     return capacidade_em_litros;

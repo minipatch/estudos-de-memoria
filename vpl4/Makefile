@@ -4,25 +4,24 @@ BUILDDIR := build
 TARGET := main.out
 CFLAGS := -g -Wall -O3 -std=c++11 -I include/
 
-all: main
-
-fogao:
-	@mkdir build/fogao
-	$(CC) $(CFLAGS) -c src/fogao -o build/fogao.o
-
-geladeira:
-	@mkdir build/geladeira
-	$(CC) $(CFLAGS) -c src/geladeira -o build/geladeira.o
-estoque:
-	@mkdir build/estoque
-	$(CC) $(CFLAGS) -c src/estoque -o build/estoque.o
-
-# Remova as tres linhas abaixo
+all: main.out
 
 # Modifique a funcao main
-main:
-	@mkdir src/main.cpp
-	$(CC) $(CFLAGS) build/fogao.o build/geladeira.o build/estoque.o src/main.cpp -o $(TARGET)
+main.out: fogao.o geladeira.o estoque.o
+	@mkdir -p $(BUILDDIR)
+	$(CC) $(CFLAGS) $(BUILDDIR)/fogao.o $(BUILDDIR)/geladeira.o $(BUILDDIR)/estoque.o $(SRCDIR)/main.cpp -o $(TARGET)
+
+estoque.o: fogao.o geladeira.o
+	@mkdir -p $(BUILDDIR)
+	$(CC) $(CFLAGS) -c $(SRCDIR)/estoque.cpp -o $(BUILDDIR)/estoque.o
+
+fogao.o:
+	@mkdir -p $(BUILDDIR)
+	$(CC) $(CFLAGS) -c $(SRCDIR)/fogao.cpp -o $(BUILDDIR)/fogao.o
+
+geladeira.o:
+	@mkdir -p $(BUILDDIR)
+	$(CC) $(CFLAGS) -c $(SRCDIR)/geladeira.cpp -o $(BUILDDIR)/geladeira.o
 
 clean:
 	$(RM) -r $(BUILDDIR)/* $(TARGET)

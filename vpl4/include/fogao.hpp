@@ -11,7 +11,7 @@ class Fogao {
     
     public:
     
-    Fogao();
+    Fogao(int numero_de_queimadores, int capacidade_forno);
 
     int getNumero_de_queimadores();
     int getCapacidade_forno();
