@@ -6,7 +6,7 @@ using namespace std;
 // 1) A funcao deve adicionar dez a uma variavel inteira
 void add10(int *n) {
     int variavel=10;
-    *n=variavel;
+    variavel=*n;
 }
 
 // 2) A funcao deve comparar dois endereços, retornando true se apontarem para a mesma posicao na memoria e false caso contrario
