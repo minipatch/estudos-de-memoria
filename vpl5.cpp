@@ -6,28 +6,26 @@ using namespace std;
 // 1) A funcao deve adicionar dez a uma variavel inteira
 void add10(int *n) {
     int variavel=10;
-    variavel=*n;
+    variavel=+*n;
 }
 
 // 2) A funcao deve comparar dois endereços, retornando true se apontarem para a mesma posicao na memoria e false caso contrario
 bool compare_end(int *num1, int *num2) {
     if(&num1==&num2){
-    return false;
+        return true;
     }
-    if(&num1!=&num2){
+    else{
         return false;
     }
-
 }
 
 // 3) A funcao deve comparar os valores armazenados em dois enderecos, retornando true se forem iguais e false caso contrario
 bool compare_val(int *num1, int *num2) {
-    if(num1==num2){
-        cout<<num1<<endl;
+    if(&num1==&num2){
         return true;
     }
-    if(num1!=num2){
-        return false; 
+    else{
+        return false;
     }
 }
 
@@ -35,44 +33,60 @@ bool compare_val(int *num1, int *num2) {
 //a fazer
 // 4) A funcao deve receber o ponteiro para um numero inteiro e retornar o ponteiro para um caracteres
 char* cast_TO_char(int *n) {
-  char *c = nullptr;
-  return c;
+  return (char*)n;
 }
 
 // 5) A funcao deve imprimir todos os caracteres ate que o caracter ‘/0’ seja encontrado.
 // O parametro e um ponteiro para a primeira posicao do vetor de caracteres
 // A funcao deve adicionar uma quebra de linha '\n' apos exibir a cadeia de caracteres.
 void print_char(char *n) {
+    int i=0;
+    while(n[i]!='\0'){
+        cout<<n[i];
+        i++;
+    }
 }
 
 // 6) A funcao deve imprimir uma string.
 // O parametro e a referencia para um string.
 // A funcao deve adicionar uma quebra de linha '\n' apos exibir a string.
 void print_string(string &str) {
+    cout<<'\n'<<str<<endl;
 }
 
 // 7) A funcao deve concatenar uma string (end) ao final de outra (begin)
 void concatenar_string(string &begin, string end) {
+    cout<<begin;
+    cout<<end;
 }
 
 // 8) A funcao deve uma alocar um array com 10 posicoes e
 // inicializa-las com o identificador da sua posição
 void aloca_array(int** arr) {
+    int *array = new int[9];
+    &array==arr;
+    
 }
+
 
 // 9) A funcao deve exibir os valores armazenados em um array
 // Os valores devem ser separados por um espaco
 // Adicione uma quebra de linha após exibir os valores
 void exibe_array(int* arr) {
+
 }
 
 // 10) A funcao deve adicionar o offset (pos) ao endereco (arr),
 // e retornar um ponteiro para a nova posicao
 int* retorna_addr_array_pos(int* arr, int pos) {
+    arr[pos];
+    return arr;
+
 }
 
 // 11) A funcao deve liberar a memória utilizada pelo array
 void libera_array(int* arr) {
+    delete arr;
 }
 
 int main(){
