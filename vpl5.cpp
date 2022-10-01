@@ -45,26 +45,25 @@ void print_char(char *n) {
         cout<<n[i];
         i++;
     }
+    cout<<'\n';
 }
 
 // 6) A funcao deve imprimir uma string.
 // O parametro e a referencia para um string.
 // A funcao deve adicionar uma quebra de linha '\n' apos exibir a string.
 void print_string(string &str) {
-    cout<<'\n'<<str<<endl;
+    cout<<str<<'\n';
 }
 
 // 7) A funcao deve concatenar uma string (end) ao final de outra (begin)
 void concatenar_string(string &begin, string end) {
-    cout<<begin;
-    cout<<end;
+    begin+=end;
 }
 
 // 8) A funcao deve uma alocar um array com 10 posicoes e
 // inicializa-las com o identificador da sua posição
 void aloca_array(int** arr) {
-    int *array = new int[9];
-    arr=&array;    
+    *arr = new int [10];
 }
 
 
@@ -72,20 +71,20 @@ void aloca_array(int** arr) {
 // Os valores devem ser separados por um espaco
 // Adicione uma quebra de linha após exibir os valores
 void exibe_array(int* arr) {
-    cout<<arr;
+    for(int i=0;i<10;i++){
+        cout<<arr[i];
+    }
 }
 
 // 10) A funcao deve adicionar o offset (pos) ao endereco (arr),
 // e retornar um ponteiro para a nova posicao
 int* retorna_addr_array_pos(int* arr, int pos) {
-    arr[pos];
-    return arr;
-
+    return &arr[pos];
 }
 
 // 11) A funcao deve liberar a memória utilizada pelo array
 void libera_array(int* arr) {
-    delete arr;
+    delete[] arr;
 }
 
 int main(){
