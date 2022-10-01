@@ -64,8 +64,7 @@ void concatenar_string(string &begin, string end) {
 // inicializa-las com o identificador da sua posição
 void aloca_array(int** arr) {
     int *array = new int[9];
-    &array==arr;
-    
+    arr=&array;    
 }
 
 
