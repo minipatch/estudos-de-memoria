@@ -3,15 +3,15 @@
 
 using namespace std;
 
+//pronto
 // 1) A funcao deve adicionar dez a uma variavel inteira
 void add10(int *n) {
-    int variavel=10;
-    variavel=+*n;
+    *n = (*n)+10;    
 }
 
 // 2) A funcao deve comparar dois endereços, retornando true se apontarem para a mesma posicao na memoria e false caso contrario
 bool compare_end(int *num1, int *num2) {
-    if(&num1==&num2){
+    if(num1==num2){
         return true;
     }
     else{
@@ -21,7 +21,7 @@ bool compare_end(int *num1, int *num2) {
 
 // 3) A funcao deve comparar os valores armazenados em dois enderecos, retornando true se forem iguais e false caso contrario
 bool compare_val(int *num1, int *num2) {
-    if(&num1==&num2){
+    if(*num1==*num2){
         return true;
     }
     else{
@@ -33,7 +33,7 @@ bool compare_val(int *num1, int *num2) {
 //a fazer
 // 4) A funcao deve receber o ponteiro para um numero inteiro e retornar o ponteiro para um caracteres
 char* cast_TO_char(int *n) {
-  return (char*)n;
+    return (char*)n;
 }
 
 // 5) A funcao deve imprimir todos os caracteres ate que o caracter ‘/0’ seja encontrado.
@@ -73,7 +73,7 @@ void aloca_array(int** arr) {
 // Os valores devem ser separados por um espaco
 // Adicione uma quebra de linha após exibir os valores
 void exibe_array(int* arr) {
-
+    cout<<arr;
 }
 
 // 10) A funcao deve adicionar o offset (pos) ao endereco (arr),
