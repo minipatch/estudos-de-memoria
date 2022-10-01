@@ -63,7 +63,10 @@ void concatenar_string(string &begin, string end) {
 // 8) A funcao deve uma alocar um array com 10 posicoes e
 // inicializa-las com o identificador da sua posição
 void aloca_array(int** arr) {
-    *arr = new int [10];
+    *arr = new int[10];
+    for(int i =0;i<10;i++){
+        (*arr)[i]= i;
+    }
 }
 
 
@@ -72,14 +75,14 @@ void aloca_array(int** arr) {
 // Adicione uma quebra de linha após exibir os valores
 void exibe_array(int* arr) {
     for(int i=0;i<10;i++){
-        cout<<arr[i];
+        cout<<arr[i]<<" " ;
     }
 }
 
 // 10) A funcao deve adicionar o offset (pos) ao endereco (arr),
 // e retornar um ponteiro para a nova posicao
 int* retorna_addr_array_pos(int* arr, int pos) {
-    return &arr[pos];
+    return arr + pos;
 }
 
 // 11) A funcao deve liberar a memória utilizada pelo array
