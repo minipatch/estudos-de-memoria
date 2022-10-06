@@ -42,7 +42,14 @@ class CachorroQuente : public Produto {
    */
   std::string descricao() const override;
 
+  int GetSalsichas();
+
+  bool GetPrensado();
  private:
+  int _num_salsichas;
+  std::vector<std::string>& _complementos;
+  bool _prensado;
+  int _qtd;
   // TODO: Declare aqui as variaveis da classe. Note que as variaveis quantidade
   // quantidade e valor_unitario ja sao herdadas de Produto
 };
