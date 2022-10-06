@@ -25,6 +25,7 @@ std::string Produto::descricao()const {
     return descricao_do_produto;
 }
 
+//funcao a analisar
 float Produto::calcPreco(){
     float soma;
     for(int i=0;i<getQtd();i++){
