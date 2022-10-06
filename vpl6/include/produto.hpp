@@ -17,7 +17,8 @@ class Produto {
 
  public:
 
-  Produto(int qtdprod,float preco,std::string valor);
+  Produto();
+  Produto(int qtdprod, float preco, std::string valor);
   /**
    * @brief Retorna a quantidade de itens do produto
    *

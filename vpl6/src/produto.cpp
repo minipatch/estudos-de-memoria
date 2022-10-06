@@ -2,10 +2,14 @@
 #include <iostream>
 #include "include/produto.hpp"
 
-Produto::Produto(int qtdprod,float preco,std::string valor){
+Produto::Produto(){
+    this->_quantidade=0;
+    this->_valor_unitario=0;
+}
+
+Produto::Produto(int qtdprod, float preco, std::string valor){
     this->_quantidade=qtdprod;
     this->_valor_unitario=preco;
-
 }
 
 int Produto::getQtd()const{

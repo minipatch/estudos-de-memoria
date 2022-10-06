@@ -40,6 +40,9 @@ class Acai : public Produto {
   std::string descricao() const override;
 
  private:
+     int _tamanho;
+     std::vector<std::string>& _complementos;
+
   // TODO: Declare aqui as variaveis da classe. Note que as variaveis quantidade
   // quantidade e valor_unitario ja sao herdadas de Produto
 };
