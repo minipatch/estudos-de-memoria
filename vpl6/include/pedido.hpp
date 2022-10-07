@@ -14,8 +14,6 @@
  */
 class Pedido {
  public:
-
-
   /**
    * @brief Destrutor da classe.
    * Aqui voce deve deletar os ponteiros contidos na lista _produtos
@@ -29,7 +27,7 @@ class Pedido {
    */
   void adicionaProduto(Produto* p);
 
-  /**2
+  /**
    * @brief Calcula o valor total do pedido.
    * @return float Valor total do pedido
    */
@@ -67,4 +65,5 @@ class Pedido {
    */
   std::string _endereco;
 };
+
 #endif
