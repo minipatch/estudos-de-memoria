@@ -39,4 +39,5 @@ venda.o: produto.o util.o pedido.o
 	@mkdir -p $(BUILD)
 	$(CC) $(FLAGS) -c src/venda.cpp -o build/venda.o
 
-clean: $(RM) -r $(BUILD)/* $(TARGET)
+clean:
+		$(RM) -r $(BUILD)/* $(TARGET)
