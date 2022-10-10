@@ -15,7 +15,6 @@ _Pizza(Pizza){}
 //a revisar
 void Pedido::adicionaProduto(Produto* p){
     _Produtos.push_back(p);
-    
 }
 
 // a revisar
@@ -30,8 +29,12 @@ float Pedido::calculaTotal() const{
 std::string Pedido::resumo() const{
     std::string Resumo;
     if(!_Produtos.empty()){
-        
+        for(int i=0;i<_Produtos.size();i++){
+            
+        }
     }
 }
 
-// 
+
+
+    
