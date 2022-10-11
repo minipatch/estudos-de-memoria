@@ -14,6 +14,8 @@
  */
 class Pedido {
  public:
+  Pedido(std::list<Produto*> produtos,std::list<CachorroQuente*> cachorro,
+    std::list<Acai*> acai,std::list<Pizza*> pizza,const std::string& endereco);
   /**
    * @brief Destrutor da classe.
    * Aqui voce deve deletar os ponteiros contidos na lista _produtos
@@ -55,7 +57,9 @@ class Pedido {
    * ou Cachorro-Quente.
    */
   std::list<Produto*> _produtos;
-
+  std::list<CachorroQuente*> _cachorro;
+  std::list<Acai*> _acai;
+  std::list<Pizza*> _pizza;
   /**
    * @brief Endereco de entrega do pedido
    *

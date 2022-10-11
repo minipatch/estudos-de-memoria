@@ -10,6 +10,7 @@
  */
 class CachorroQuente : public Produto {
  public:
+  CachorroQuente(int num_salsichas, std::vector<std::string>& complementos,bool prensando,int qtd,float valor,std::string descricao);
   /**
    * @brief Construtor padrao que inicializa todas as variaveis da classe.
    * Note que o valor unitario (membro da classe mãe) deve ser calculado 
@@ -40,6 +41,9 @@ class CachorroQuente : public Produto {
 
  private:
   // TODO: Declare aqui as variaveis da classe. Note que as variaveis quantidade
+  int _num_salsichas;
+  std::vector<std::string>& _complementos;
+  bool _prensando;
   // quantidade e valor_unitario ja sao herdadas de Produto
 };
 #endif

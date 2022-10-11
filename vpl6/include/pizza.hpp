@@ -20,10 +20,10 @@ class Pizza : public Produto {
    * @param borda_recheada Informa se a pizza tem borda recheada ou nao
    * @param qtd Quantidade de pizzas
    */
-  Pizza(const std::string& sabor,
+  Pizza(float valor,const std::string& sabor,
         int pedacos,
         bool borda_recheada,
-        int qtd);
+        int qtd,std::string descricao);
 
   /**
    * @brief Calcula o valor da pizza de acordo com as regras:
@@ -43,6 +43,9 @@ class Pizza : public Produto {
   std::string descricao() const override;
 
  private:
+      const std::string &_sabor;
+      int _pedacos;
+      bool _borda_recheada;
   // TODO: Declare aqui as variaveis da classe. Note que as variaveis quantidade
   // quantidade e valor_unitario ja sao herdadas de Produto
 };
