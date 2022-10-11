@@ -12,8 +12,6 @@
  */
 class Venda {
  public:
-  Venda(std::list<Pedido*> pedidos);
-
   /**
    * @brief Adiciona um novo pedido a lista de pedidos processados.
    * @param p Representa o novo pedido que foi recebido.

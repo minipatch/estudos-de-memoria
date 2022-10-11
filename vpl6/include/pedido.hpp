@@ -49,21 +49,17 @@ class Pedido {
    */
   void setEndereco(const std::string& endereco);
 
-  Pedido(std::list<Produto*> produtos,std::list<Acai*> Acai,std::list<CachorroQuente*>Cachorro,std::list<Pizza*>Pizza);
  private:
   /**
    * @brief Lista de produtos do pedido. Pode ser do tipo Açaí, Pizza
    * ou Cachorro-Quente.
    */
-  std::list<Produto*> _Produtos;
-  std::list<Acai*> _Acai;
-  std::list<CachorroQuente*> _Cachorro;
-  std::list<Pizza*> _Pizza;
+  std::list<Produto*> _produtos;
+
   /**
    * @brief Endereco de entrega do pedido
    *
    */
   std::string _endereco;
 };
-
 #endif

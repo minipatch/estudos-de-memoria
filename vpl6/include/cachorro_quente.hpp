@@ -20,12 +20,8 @@ class CachorroQuente : public Produto {
    * @param prensado se o cachorro quente deve ser prensado
    * @param qtd Quantidade do item.
    */
-  CachorroQuente(int num_salsichas,
-           std::vector<std::string>& complementos,
-           bool prensado,
-           int qtd);
-
-  /**
+  
+   /**
    * @brief Calcula o valor do cachorro quente de acordo com as regras:
    * 5 reais preço base + 1.50 real por salsicha 
    * + 1 real por complemento + 0.50 centavos se for prensar
@@ -42,14 +38,7 @@ class CachorroQuente : public Produto {
    */
   std::string descricao() const override;
 
-  int GetSalsichas();
-
-  bool GetPrensado();
  private:
-  int _num_salsichas;
-  std::vector<std::string>& _complementos;
-  bool _prensado;
-  int _qtd;
   // TODO: Declare aqui as variaveis da classe. Note que as variaveis quantidade
   // quantidade e valor_unitario ja sao herdadas de Produto
 };

@@ -19,9 +19,9 @@ class Acai : public Produto {
    * @param complementos Coleção de strings com os complementos 
    * @param qtd Quantidade de açaís do mesmo tamanho e complementos
    */
-     Acai(int tamanho,
-          std::vector<std::string>& complementos,
-          int qtd);
+  Acai(int tamanho,
+       std::vector<std::string>& complementos,
+       int qtd,float valor);
 
   /**
    * @brief Calcula o valor do açaí de acordo com as regras:
@@ -29,7 +29,7 @@ class Acai : public Produto {
    * 
    * @return float preço do açaí em reais
    */
-     float calcPreco() override;
+  float calcPreco() override;
 
   /**
    * @brief Retorna uma descricao detalhada do açaí.
@@ -37,15 +37,13 @@ class Acai : public Produto {
    *
    * @return std::string Descricao detalhada do açai
    */
-     std::string descricao() const override;
-
-     int getTamanho();
+  std::string descricao() const override;
 
  private:
-     int _tamanho;
-     std::vector<std::string>& _complementos;
-     int _quantidade;
   // TODO: Declare aqui as variaveis da classe. Note que as variaveis quantidade
-  // quantidade e valor_unitario ja sao herdadas de Produto
+  // quantidade e valor_unitario ja sao herdadas de Proqduto
+  int _tamanho;
+  std::vector<std::string>& _complementos;
+  
 };
 #endif

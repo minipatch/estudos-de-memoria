@@ -10,15 +10,10 @@
  * informacoes basicas de um produto.
  */
 class Produto {
-  private:
-    int _qtdprod;
-    float _preco;
-    std::string _valor;
-
  public:
-
   Produto();
-  Produto(int qtdprod, float preco, std::string valor);
+
+  Produto(int quantidade,float valor_unitario,std::string descricao);
   /**
    * @brief Retorna a quantidade de itens do produto
    *
@@ -59,6 +54,8 @@ class Produto {
    */
   int _quantidade{0};
 
+
+  std::string _descricao;
   /**
    * @brief Valor unitatio do produto
    */
