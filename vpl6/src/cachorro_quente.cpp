@@ -29,5 +29,15 @@ float CachorroQuente::calcPreco(){
 
 
 std::string CachorroQuente::descricao() const{
-    return _descricao;
+    std::string desc;
+    if(_prensando!=true){
+        desc ="cachorro quente com " +std::to_string(_num_salsichas)+" salsichas";
+    }
+    if(_prensando==true){
+        desc = "cachorro quente prenssado com " + std::to_string(_num_salsichas)+" salsichas";
+    }
+
+    for(int i=0;i<_complementos.size();i++){
+        desc =+ " ," + _complementos[i];   
+    }
 }

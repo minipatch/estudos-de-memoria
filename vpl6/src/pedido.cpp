@@ -17,9 +17,11 @@ void Pedido::adicionaProduto(Produto* p){
 
 //a preciso de um help
 float Pedido::calculaTotal() const{
+    float valor;
     for(int i=0;i<_produtos.size();i++){
-        //_valor_unitario;
+        valor==i;
     }
+    return valor;
 }
 
 void Pedido::setEndereco(const std::string& endereco){

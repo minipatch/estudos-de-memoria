@@ -1,10 +1,9 @@
 // TODO implemente essa classe de acordo com o hpp correspondente
 #include "acai.hpp"
 
-Acai::Acai(int tamanho,std::vector<std::string>& complementos,int qtd,float valor,std::string descricao): _tamanho(tamanho), _complementos(complementos){
+Acai::Acai(int tamanho,std::vector<std::string>& complementos,int qtd,float valor) : _tamanho(tamanho), _complementos(complementos){
     this->_quantidade=qtd;
     this->_valor_unitario=valor;
-    this->_descricao=descricao;
 }
 
 float Acai::calcPreco(){
@@ -19,7 +18,16 @@ float Acai::calcPreco(){
     return _valor_unitario;
 }
 
+
 std::string Acai::descricao() const{
-    return _descricao;
+    std::string desc;
+    desc = std::to_string(_quantidade) + "X açai" + std::to_string(_tamanho);
+    for(int i=0;i<_complementos.size();i++){
+        desc += ", " + _complementos[i];
+    }
+    
+    return desc;
 }
+
+
 
